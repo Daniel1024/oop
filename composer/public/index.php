@@ -2,20 +2,15 @@
 
 namespace Daniel;
 
-use Daniel\Armors\BronzeArmor;
-use Daniel\Armors\CursedArmor;
+ require '../vendor/autoload.php';
 
-require '../vendor/autoload.php';
+$ramm = new Soldier('Ramm', new Weapons\BasicSword);
 
-$armor = new BronzeArmor();
+$ramm->setArmor(new Armors\BronzeArmor);
 
-$ramm = new Soldier('Ramm');
+$silence = new Archer('Silence', new Weapons\CrossBow);
 
-$silence = new Archer('Silence');
-//$silence->move('el sur');
 $silence->attack($ramm);
-
-$ramm->setArmor(new CursedArmor);
 
 $silence->attack($ramm);
 

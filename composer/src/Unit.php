@@ -7,10 +7,18 @@ abstract class Unit
 
     protected $hp = 40;
     protected $name;
+    protected $weapon;
+    protected $armor;
 
-    public function __construct($name)
+    public function __construct($name, Weapon $weapon)
     {
         $this->name = $name;
+        $this->weapon = $weapon;
+    }
+
+    public function setArmor(Armor $armor = null)
+    {
+        $this->armor = $armor;
     }
 
     public function getName()
@@ -28,7 +36,13 @@ abstract class Unit
         show("{$this->name} camina hacia $direction");
     }
 
-    abstract public function attack(Unit $opponent);
+    public function attack(Unit $opponent)
+    {
+        show($this->weapon->getDescription($this, $opponent));
+
+        $opponent->takeDamage($this->weapon->getDamage());
+
+    }
 
     public function takeDamage($damage)
     {
@@ -50,6 +64,10 @@ abstract class Unit
 
     protected function absorbDamage($damage)
     {
+        if ($this->armor) {
+            $damage = $this->armor->absorbDamage($damage);
+        }
+
         return $damage;
     }
 
