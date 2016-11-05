@@ -2,16 +2,47 @@
 
 class Person
 {
-    public $firstName;
-    public $lastName;
+    protected $firstName;
+    protected $lastName;
+    protected $nickName;
+    protected $changeNickName = 0;
 
     public function __construct($firstName, $lastName)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
     }
+
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function setNickName($nickName)
+    {
+        if ($this->changeNickName >= 2) {
+            throw new Exception("You can't change a nickname more than 2 times");
+            
+        }
+
+        if (! empty(trim($nickName))) {
+            $this->nickName = strtolower($nickName);
+            $this->changeNickName++;
+        }
+
+    }
+
+    public function getNickName()
+    {
+        return $this->nickName;
+    }
     
-    public function fullName()
+    public function getFullName()
     {
         return $this->firstName . ' ' . $this->lastName;
     }
@@ -19,6 +50,6 @@ class Person
 
 $person1 = new Person('Daniel', 'López');
 
-$person2 = new Person('Marbella', 'Soto');
+$person1->setNickName('Daniel1024');
 
-echo "{$person1->fullName()} es novio de {$person2->fullName()}";
+echo "El nickname de {$person1->getFullName()} es: {$person1->getNickName()}";
