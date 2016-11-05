@@ -1,6 +1,8 @@
 <?php
 
-namespace Daniel;
+namespace Daniel\Armors;
+
+use Daniel\Armor;
 
 class SilverArmor implements Armor
 {

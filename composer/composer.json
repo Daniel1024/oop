@@ -1,0 +1,19 @@
+{
+    "name": "daniel/oop",
+    "description": "Repitiendo el curso de stydenet para oop",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Lopez",
+            "email": "admin@daniel.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["src/helpers.php"],
+        "psr-4": {
+            "Daniel\\": "src/"
+        }
+    }
+}
