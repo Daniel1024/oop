@@ -4,11 +4,11 @@ namespace Daniel;
 
  require '../vendor/autoload.php';
 
-$ramm = new Soldier('Ramm', new Weapons\BasicSword);
+$ramm = new Soldier('Ramm', new Weapons\BasicSword());
 
-$ramm->setArmor(new Armors\BronzeArmor);
+$ramm->setArmor(new Armors\BronzeArmor());
 
-$silence = new Archer('Silence', new Weapons\CrossBow);
+$silence = new Archer('Silence', new Weapons\CrossBow());
 
 $silence->attack($ramm);
 

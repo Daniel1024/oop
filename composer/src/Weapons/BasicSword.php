@@ -7,7 +7,7 @@ use Daniel\Unit;
 
 class BasicSword extends Weapon
 {
-    protected $damge = 40;
+    protected $damage = 40;
 
     public function getDescription(Unit $attacker, Unit $opponent)
     {

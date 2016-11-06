@@ -16,6 +16,11 @@ abstract class Unit
         $this->weapon = $weapon;
     }
 
+    public function setWeapon(Weapon $weapon)
+    {
+        $this->weapon = $weapon;
+    }
+
     public function setArmor(Armor $armor = null)
     {
         $this->armor = $armor;

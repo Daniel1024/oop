@@ -2,12 +2,12 @@
 
 namespace Daniel\Weapons;
 
-use Daniel\Weapon;
+//use Daniel\Weapon;
 use Daniel\Unit;
 
-class BasicBow extends Weapon
+class BasicBow extends Bow
 {
-    protected $damge = 20;
+    protected $damage = 20;
 
     public function getDescription(Unit $attacker, Unit $opponent)
     {
