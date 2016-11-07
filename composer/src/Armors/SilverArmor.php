@@ -5,16 +5,12 @@ namespace Daniel\Armors;
 use Daniel\Armor;
 use Daniel\Attack;
 
-class SilverArmor implements Armor
+class SilverArmor extends Armor
 {
     
-    public function absorbDamage(Attack $attack)
+    public function absorbPhysicalDamage(Attack $attack)
     {
-        if ($attack->isPhysical()) {
-            return $attack->getDamage() / 3;
-        }
-
-        return $attack->getDamage();
-        
+        return $attack->getDamage() / 3;        
     }
+
 }

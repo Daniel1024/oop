@@ -5,7 +5,7 @@ namespace Daniel\Armors;
 use Daniel\Armor;
 use Daniel\Attack;
 
-class CursedArmor implements Armor
+class CursedArmor extends Armor
 {
     
     public function absorbDamage(Attack $attack)
