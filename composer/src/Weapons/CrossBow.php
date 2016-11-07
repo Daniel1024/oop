@@ -2,16 +2,12 @@
 
 namespace Daniel\Weapons;
 
-//use Daniel\Weapon;
-use Daniel\Unit;
+use Daniel\Weapon;
+//use Daniel\Unit;
 
-class CrossBow extends Bow
+class CrossBow extends Weapon
 {
     protected $damage = 40;
-
-    public function getDescription(Unit $attacker, Unit $opponent)
-    {
-        return "{$attacker->getName()} dispara una flecha a {$opponent->getName()}";
-    }
+    protected $description = ':unit dispara una flecha con la ballesta a :opponent';
 
 }
