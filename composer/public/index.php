@@ -11,9 +11,10 @@ namespace Daniel;
     'FireBowAttack'     => ':unit dispara una flecha de fuego a :opponent',
 ]);
 
-$ramm = new Unit('Ramm', new Weapons\BasicSword());
-
-$ramm->setArmor(new Armors\SilverArmor());
+$ramm = Unit::createSoldier('Ramm')
+            ->setWeapon(new Weapons\BasicSword())
+            ->setArmor(new Armors\SilverArmor())
+            ->setShield();
 
 $silence = new Unit('Silence', new Weapons\FireBow());
 
